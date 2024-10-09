@@ -13,6 +13,7 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 palm.configure(api_key=GEMINI_API_KEY)
 model = palm.GenerativeModel(model_name="gemini-1.5-flash")
 
+
 def record_audio(duration=5, sample_rate=44100):
     """Record audio for a fixed duration and save it to a .mp3 file"""
     st.write(f"Recording for {duration} seconds...")

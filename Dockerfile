@@ -2,7 +2,7 @@ FROM python:3.12.6-slim
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install curl -y \
+RUN apt-get update && apt-get install curl libportaudio2 -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
@@ -18,7 +18,6 @@ USER app
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV GEMINI_API_KEY=${GEMINI_API_KEY}
 
 COPY --chown=app:app . .
 

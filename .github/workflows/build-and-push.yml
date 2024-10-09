@@ -8,6 +8,7 @@ on:
       - "Dockerfile"
       - "**.py"
       - "requirements.txt"
+      - ".github/**"
 
 jobs:
   build:
@@ -36,8 +37,6 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: sasquatch06/vink_project:latest
-          build-args: |
-            GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}
 
       - name: Log out from Docker Hub
         run: docker logout

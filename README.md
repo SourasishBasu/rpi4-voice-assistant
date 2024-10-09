@@ -36,6 +36,6 @@
 - Pull the app image and run with Docker.
   ```bash
   docker pull sasquatch06/vink_project:latest
-  docker run sasquatch06/vink_project:latest -p 8501:8501
+  docker run -p 8501:8501 -e GEMINI_API_KEY=<insert-api-key-here> --device /dev/snd -d sasquatch06/vink_project:latest
   ```
 - Visit http://localhost:8501 to view the Streamlit Dashboard for interacting with the webapp.
